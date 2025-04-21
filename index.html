@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesquita Brasil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #f9f5f0 0%, #eaf4ef 100%);
+      color: #2f4f4f;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #d5e6dc;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #aac4b1;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      width: 40px;
+      height: auto;
+      margin-right: 12px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #2f4f4f;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #4caf50;
+      text-decoration: underline;
+    }
+    .hero {
+      padding: 80px 20px 60px;
+      text-align: center;
+      background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+      background-color: #eaf4ef;
+      animation: fadeIn 1s ease;
+    }
+    .hero h2 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .section {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      margin: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      animation: fadeIn 1.2s ease;
+    }
+    .section h2 {
+      border-bottom: 2px solid #d5e6dc;
+      padding-bottom: 12px;
+      margin-bottom: 30px;
+      font-family: 'Scheherazade New', serif;
+      font-size: 2rem;
+      color: #2e5e4e;
+    }
+    .section blockquote {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f1f8e9;
+      border-left: 6px solid #81c784;
+      font-style: italic;
+      font-family: 'Scheherazade New', serif;
+      font-size: 1.2rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+    form input, form textarea {
+      margin-bottom: 15px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    form button {
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    form button:hover {
+      background-color: #388e3c;
+    }
+    .table {
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    .table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .table th, .table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .btn-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background-color: #006666;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-link:hover {
+      background-color: #004d4d;
+    }
+    details {
+      margin-bottom: 20px;
+      background-color: #f3f9f6;
+      padding: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+    }
+    details summary {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    details[open] {
+      background-color: #e2f0eb;
+    }
+    footer {
+      padding: 30px;
+      background-color: #2f4f4f;
+      color: #fff;
+      text-align: center;
+    }
+    footer small {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="IMAGENS/islamic.png" alt="Logo Islâmica">
+    <h1>Mesquita Brasil</h1>
+  </div>
+  <nav>
+    <a href="#isla">O Islã</a>
+    <a href="#visitas">Visitas</a>
+    <a href="#atividades">Atividades</a>
+    <a href="#oracoes">Orações</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h2>Seja bem-vindo(a)!</h2>
+  <p>Este é um espaço de paz, aprendizado e acolhimento. Conheça mais sobre o Islã e a Mesquita Brasil.</p>
+</div>
+
+<div class="section" id="isla">
+  <h2>Conheça o Islã</h2>
+  <p>O Islã é uma religião de paz, submissão e entrega a Allah (Deus). É baseado em cinco pilares fundamentais que norteiam a vida do muçulmano:</p>
+  <ul>
+    <li><strong>Shahada</strong>: Testemunho de fé – declarar que não há divindade além de Allah e que Muhammad ﷺ é Seu mensageiro.</li>
+    <li><strong>Salah</strong>: Realizar as cinco orações diárias.</li>
+    <li><strong>Zakat</strong>: Caridade obrigatória, um ato de purificação da riqueza.</li>
+    <li><strong>Sawm</strong>: Jejum durante o mês de Ramadan.</li>
+    <li><strong>Hajj</strong>: Peregrinação à cidade sagrada de Meca, se possível.</li>
+  </ul>
+  <p>O Profeta Muhammad ﷺ foi enviado como misericórdia para toda a humanidade. Ele é o exemplo de caráter, paciência, amor e justiça.</p>
+  <blockquote>
+    “Em verdade, no Mensageiro de Allah há para vós um belo exemplo.” <br> <em>(Alcorão 33:21)</em>
+  </blockquote>
+</div>
+
+<div class="section" id="visitas">
+  <h2>Visitas</h2>
+  <p>Preencha o formulário abaixo para agendar uma visita guiada à nossa mesquita.</p>
+  <form>
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu e-mail" required>
+    <textarea placeholder="Mensagem ou motivo da visita" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<div class="section" id="atividades">
+  <h2>⭐ Atividades Semanais</h2>
+  <ul>
+    <li>🧕 Aula de Religião para Mulheres – Quartas às 11h</li>
+    <li>👦 Aula para Jovens – Sábados às 14h</li>
+    <li>📖 Aula de Inglês (gratuita) – Sábados</li>
+    <li>🗣️ Aula de Árabe e Culinária Árabe – com pequeno custo</li>
+    <li>🕌 Salat al-Jumu'ah – Sextas às 12h30</li>
+    <li>🍽️ Almoço após a oração – R$ 50,00</li>
+  </ul>
+</div>
+
+<div class="section" id="oracoes">
+  <h2>🕋 Horários das Orações</h2>
+  <div class="table">
+    <table>
+      <tr><th>Oração</th><th>Horário</th></tr>
+      <tr><td>🌅 Fajr (Aurora)</td><td>05h00</td></tr>
+      <tr><td>🌞 Dhuhr (Meio-dia)</td><td>12h10</td></tr>
+      <tr><td>🌤️ Asr (Tarde)</td><td>15h30</td></tr>
+      <tr><td>🌇 Maghrib (Pôr do sol)</td><td>17h45</td></tr>
+      <tr><td>🌌 Isha (Noite)</td><td>19h10</td></tr>
+    </table>
+    <a href="https://www.islamicfinder.org/world/brazil/3448439/sao-paulo-prayer-times/" target="_blank" class="btn-link">Ver horários atualizados</a>
+  </div>
+</div>
+
+<div class="section" id="galeria">
+  <h2>🖼️ Galeria</h2>
+  <div class="gallery">
+    <img src="IMAGENS/1000046261.jpg" alt="Interior da Mesquita">
+    <img src="IMAGENS/1000046259.jpg" alt="Momento de oração">
+    <img src="IMAGENS/1000046260.jpg" alt="Almoço de sexta-feira">
+    <img src="IMAGENS/1000046258.jpg" alt="Aulas na Mesquita">
+  </div>
+</div>
+
+<div class="section" id="faq">
+  <h2>💬 FAQ – Perguntas Frequentes</h2>
+  <details>
+    <summary>🧕 Posso visitar a mesquita mesmo não sendo muçulmana?</summary>
+    <p>Sim! A Mesquita Brasil está aberta a todos que buscam conhecer mais sobre o Islã. Basta agendar uma visita guiada.</p>
+  </details>
+  <details>
+    <summary>🧥 Preciso usar hijab para visitar?</summary>
+    <p>Pedimos que mulheres usem um lenço no cabelo e roupas recatadas. Temos hijabs disponíveis na entrada, se desejar.</p>
+  </details>
+  <details>
+    <summary>📅 O que é o Ramadan?</summary>
+    <p>É o mês sagrado do jejum no Islã. Durante esse período, os muçulmanos jejuam do amanhecer ao pôr do sol em busca de purificação e aproximação com Allah.</p>
+  </details>
+  <details>
+    <summary>👼 O que o Islã diz sobre Jesus?</summary>
+    <p>No Islã, Jesus (Isa) é um dos mais amados profetas de Allah, nascido de forma milagrosa por Maria (Maryam), que também é honrada como uma das maiores mulheres da humanidade.</p>
+  </details>
+  <details>
+    <summary>🌹 Maria é mencionada no Alcorão?</summary>
+    <p>Sim! Inclusive há uma surata com o nome dela: "Surata Maryam". Ela é um exemplo de fé, pureza e devoção a Deus.</p>
+  </details>
+</div>
+
+<div class="section" id="contato">
+  <h2>📬 Contato</h2>
+  <p><strong>📍 Endereço:</strong> R. Barão de Jaguara, 632 - Cambuci, São Paulo - SP, 01520-040</p>
+  <p><strong>📞 WhatsApp:</strong> (11) 3208-6789</p>
+  <p><strong>📧 Email:</strong> secretaria@mesquitabrasil.com.br</p>
+  <p><strong>📷 Instagram:</strong> @mesquitabrasil</p>
+  <p><strong>📘 Facebook:</strong> facebook.com/mesquitabrasil</p>
+</div>
+
+<footer>
+  <p>Projeto de Extensão - Jessica Souza</p>
+  <small>Que Allah abençoe você e sua família com paz e sabedoria.</small>
+</footer>
+</body>
+</html>
